@@ -1,3 +1,4 @@
+//api_con_await.js
 //promises ajax
 
 // const descargarUsuarios = cantidad = new Promise((resolve,reject) =>{
@@ -57,25 +58,26 @@ async function getUserAsync(cantidad) {
         )
     );
 
-function imprimirHTML(miembros) {
-    console.log(miembros);
+// function imprimirHTML(miembros) {
+//     console.log(miembros.results);
     
-}
+// }
 
-    // function imprimirHTML (usuarios){
-    //     let html='';
-    //     usuarios.forEach(usuario => {
+    function imprimirHTML (usuarios){
+        let html='';
+        console.log(usuarios.results);
+        usuarios.results.forEach(usuario => {
 
-    //          html+=`
-    //          <li>
-    //              Nombre: ${usuario.name.first} ${usuario.name.last}
-    //              Pais: ${usuario.nat}
-    //              Imagen: <img src="${usaurio.picture.medium}">
-    //          </li>
-    //          `;
+             html+=`
+             <li>
+                 Nombre: ${usuario.name.first} ${usuario.name.last}
+                 Pais: ${usuario.location.country}
+                 Imagen: <img src="${usuario.picture.medium}">
+             </li>
+             `;
      
-    //     });
+        });
 
-    //     const contenedorApp = document.querySelector('#app');
-    //     contenedorApp.innerHTML = html;
-    // }
+        const contenedorApp = document.querySelector('#app');
+        contenedorApp.innerHTML = html;
+    }
